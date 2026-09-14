@@ -1,0 +1,37 @@
+local antiExplodeT = false
+
+local function antiExplodeF()
+	antiExplodeT = true
+	local char = Player.Character
+	if not char then
+		return
+	end
+	local hrp = char:WaitForChild("HumanoidRootPart")
+	workspace.ChildAdded:Connect(function(model)
+		if model.Name == "Part" and antiExplodeT then
+			local mag = (model.Position - hrp.Position).Magnitude
+			if mag <= 20 then
+				hrp.Anchored = true
+				wait(0.01)
+				while char["Right Arm"].RagdollLimbPart.CanCollide do
+					wait(0.001)
+				end
+				hrp.Anchored = false
+			end
+		end
+	end)
+end
+
+DefenseGroup:CreateToggle({
+	Name = "Anti Explosion",
+	Flag = "Anti Explosion", 
+	Default = false,
+	Callback = function(on)
+		SetToggleState("Anti Explosion", on)
+		if on then
+			antiExplodeF()
+		else
+			antiExplodeT = false
+		end
+	end
+})
