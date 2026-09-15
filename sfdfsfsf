@@ -596,7 +596,7 @@ KickTab:AddToggle({
 })
 
 KickTab:AddToggle({
-	Name = "Kick All",
+	Name = "Kick All V1",
 	Default = false,
 	Callback = function(Value)
 		Settings.KickAllV1 = Value
@@ -605,14 +605,14 @@ KickTab:AddToggle({
 })
 
 BarrierTab:AddButton({
-	Name = "Unlock Barrier v1",
+	Name = "Unlock Barrier (V1)",
 	Callback = function()
 		task.spawn(UnlockBarrier)
 	end
 })
 
 BarrierTab:AddButton({
-	Name = "Unlock Barrier v2",
+	Name = "Unlock Barrier V2 (Fast)",
 	Callback = function()
 		task.spawn(UnlockBarrierV2)
 	end
@@ -639,7 +639,7 @@ BarrierTab:AddToggle({
 })
 
 Rndm:AddToggle({
-	Name = "anti void",
+	Name = "Enable void",
 	Default = true,
 	Callback = function(Value)
 		game.Workspace.FallHeightEnabled = Value
@@ -654,7 +654,7 @@ Rndm:AddButton({
 })
 
 Rndm:AddButton({
-	Name = "Grab all toys",
+	Name = "Grab all",
 	Callback = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/2015xavier123-star/Bjsjsjs/refs/heads/main/Test.lua"))()
 	end
