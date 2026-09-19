@@ -1,6 +1,3 @@
--- MonsterLag - standalone script (no UI)
--- Fires CreateGrabLine with random coordinates every frame to lag the server
-
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
@@ -9,7 +6,6 @@ local GrabEvents = ReplicatedStorage:FindFirstChild("GrabEvents")
 local CreateLine = GrabEvents and GrabEvents:FindFirstChild("CreateGrabLine")
 
 if not CreateLine then
-    -- Try to wait for it in case it loads later
     GrabEvents = ReplicatedStorage:WaitForChild("GrabEvents", 10)
     CreateLine = GrabEvents and GrabEvents:FindFirstChild("CreateGrabLine")
 end
