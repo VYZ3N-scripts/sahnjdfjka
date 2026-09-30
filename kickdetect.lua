@@ -191,5 +191,5 @@ function g.StartKickDetect()
 	notify("watching for kicks")
 end
 
-notify("watching for Blobman kicks + grab flings")
-print("[KickDetect] raw loaded — getgenv().StopKickDetect() / StartKickDetect()")
+notify("stalking your game for Blobman kicks")
+print("kickdetect loaded sonnnn")
